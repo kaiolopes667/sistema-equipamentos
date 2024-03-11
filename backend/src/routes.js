@@ -2,9 +2,9 @@ const express = require('express');
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-    host: 'localhost', // Altere para o host do seu banco de dados
-    user: 'root', // Altere para o usuário do seu banco de dados
-    password: '', // Altere para a senha do seu banco de dados
+    host: 'localhost',
+    user: 'root',
+    password: '',
     database: 'crud'
 });
 
