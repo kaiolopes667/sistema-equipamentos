@@ -1,0 +1,244 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #c2b8ff;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c2b8ff;
+}
+
+.titleDeslogar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.titleDeslogar span {
+  font-size: 18px;
+}
+
+.containerBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 8px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.form input {
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
+  opacity: 0.8;
+  border: solid 1px #a09ced;
+  background-color: #1b204a;
+  color: #a09ced;
+  box-shadow: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #978cd9;
+  box-shadow: 0 0 8px rgba(152, 140, 217, 0.5);
+  background-color: #0f133c;
+  opacity: 1;
+}
+
+.form button {
+  padding: 10px 80px;
+  border-radius: 100px;
+  border: none;
+  background: linear-gradient(135deg, hsla(312, 66%, 76%, 1) 0%, hsla(234, 93%, 67%, 1) 100%);
+  color: #fff;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border: none;
+}
+
+.table th {
+  background-color: #4b4084;
+  color: #A0A0C0;
+}
+
+.table td {
+  background-color: #090f2f;
+  color: #A0A0C0;
+  border: solid 1px #21275f;
+  opacity: 0.7;
+}
+
+.table thead th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.table thead th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.table tbody tr td {
+  border: none;
+  border-top: solid 1px #21275f;
+  border-bottom: solid 1px #21275f;
+}
+
+.table tbody tr {
+  margin-bottom: 10px;
+}
+
+.table tbody tr td:first-child {
+  border-left: solid 1px #21275f;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.table tbody tr td:last-child {
+  border-right: solid 1px #21275f;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.tableRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  padding: 20px;
+  border-radius: 8px;
+  width: 600px;
+  box-shadow: 20px 40px 60px 0 rgba(0, 2, 19, 0.15);
+  border: solid 1px #21275f;
+  background-blend-mode: multiply;
+  background-image: linear-gradient(to bottom, rgba(27, 31, 72, 0.5), rgba(27, 31, 72, 0.5));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.modalBody {
+  margin-top: 20px;
+}
+
+.divInput {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.inputModal {
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
+  opacity: 0.8;
+  border: solid 1px #a09ced;
+  background-color: #1b204a;
+  color: #a09ced;
+  box-shadow: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputModal:focus {
+  outline: none;
+  border-color: #978cd9;
+  box-shadow: 0 0 8px rgba(152, 140, 217, 0.5);
+  background-color: #0f133c;
+  opacity: 1;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.buttons .saveButton {
+  background: linear-gradient(135deg, hsla(312, 66%, 76%, 1) 0%, hsla(234, 93%, 67%, 1) 100%);
+  color: #fff;
+}
+
+.buttons .cancelButton {
+  background: linear-gradient(135deg, hsla(312, 66%, 76%, 1) 0%, hsla(234, 93%, 67%, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
