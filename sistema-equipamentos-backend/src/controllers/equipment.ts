@@ -10,7 +10,7 @@ export async function addEquipment(req: Request, res: Response) {
 }
 
 export async function deleteEquipment(req: Request, res: Response) {
-  const equipmentId = Number(req.params.equipmentId) || null;
+  const equipmentId = Number(req.params.id) || null;
 
   await equipmentBusiness.deleteEquipment(equipmentId);
 
@@ -23,11 +23,20 @@ export async function getEquipments(_req: Request, res: Response) {
   return res.json(equipments);
 }
 
+
+export async function getEquipmentsById(req: Request, res: Response) {
+  const equipmentId = Number(req.params.id) || null;
+
+  const equipments = await equipmentBusiness.getEquipmentsById(equipmentId);
+
+  return res.json(equipments);
+}
+
 export async function updateEquipment(req: Request, res: Response) {
-  const { equipment_id, person_name, email, type, asset_number } = req.body;
+  const { id, person_name, email, type, asset_number } = req.body;
 
   await equipmentBusiness.updateEquipment(
-    equipment_id,
+    id,
     person_name,
     email,
     type,

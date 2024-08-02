@@ -1,14 +1,17 @@
 import express from "express";
-import { addEquipment, deleteEquipment, getEquipments, updateEquipment } from "../controllers/equipment";
+import { addEquipment, deleteEquipment, getEquipments, getEquipmentsById, updateEquipment } from "../controllers/equipment";
+import asyncHandler from '../asyncHandler';
 
 const router = express.Router()
 
-router.get("/equipment", getEquipments)
+router.get("/equipment", asyncHandler(getEquipments))
 
-router.post("/equipment/add", addEquipment)
+router.get("/equipment/:id", asyncHandler(getEquipmentsById))
 
-router.put("equipment/update/:id", updateEquipment)
+router.post("/equipment/add", asyncHandler(addEquipment))
 
-router.delete("equipment/delete/:id", deleteEquipment)
+router.put("/equipment/update/:id", asyncHandler(updateEquipment))
+
+router.delete("/equipment/delete/:id", asyncHandler(deleteEquipment))
 
 export default router

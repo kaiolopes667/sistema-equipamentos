@@ -1,6 +1,6 @@
 import prismaClient from "../prisma";
 
-export async function addEquipment(person_name: string, email: string, type: string, asset_number: number, created_by_user_id: number) {
+export async function addEquipment(person_name: string, email: string, type: string, asset_number: string, created_by_user_id: number) {
     await prismaClient.equipment.create({
         data: {
             person_name,
@@ -23,6 +23,7 @@ export async function deleteEquipment (equipmentId: number) {
 export async function getEquipments () {
     const equipments = await prismaClient.equipment.findMany({
         select: {
+            id: true,
             person_name: true,
             email: true,
             type: true,
@@ -33,7 +34,23 @@ export async function getEquipments () {
     return equipments;
 }
 
-export async function updateEquipment (equipment_id: number, person_name: string, email: string, type: string, asset_number: number) {
+export async function getEquipmentsById(equipmentId: number) {
+    const equipments = await prismaClient.equipment.findMany({
+        select: {
+            person_name: true,
+            email: true,
+            type: true,
+            asset_number: true,
+        },
+        where: {
+            id: equipmentId
+        }
+    })
+
+    return equipments;
+}
+
+export async function updateEquipment (equipment_id: number, person_name: string, email: string, type: string, asset_number: string) {
     await prismaClient.equipment.update({
         where: {
             id: equipment_id
